@@ -3,7 +3,7 @@
 node {
 
     stage('Configure') {
-        def mvnHome = tool 'maven-3'
+        def mvnHome = tool 'maven-3.5.0'
     }
 
     stage('Hello World') {
