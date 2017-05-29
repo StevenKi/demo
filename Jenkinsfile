@@ -10,9 +10,6 @@ node {
 
     stage('Build and unit test') {
         sh "${mvnHome}/bin/mvn clean install"
-    }
-
-    stage('Hello World') {
-        echo 'Hello World!'
+        step([$class: 'JUnitResultArchiver', testResults:'**/target/surefire-reports/TEST-*.xml'])
     }
 }
