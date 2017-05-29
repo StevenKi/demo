@@ -3,6 +3,7 @@ package com.example.demo;
 import cucumber.api.java.en.Given;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class StepDefinition {
 
@@ -11,4 +12,8 @@ public class StepDefinition {
         assertEquals("admin", name);
     }
 
+    @Given("^I am here$")
+    public void iAmHere() throws Throwable {
+        assertTrue(true);
+    }
 }
