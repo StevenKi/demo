@@ -3,7 +3,7 @@
 node {
 
     stage('Configure') {
-        env.PATH = "${tool 'maven-3.3.9'}/bin:${env.PATH}"
+        def mvnHome = tool 'maven-3'
     }
 
     stage('Hello World') {
