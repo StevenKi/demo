@@ -12,4 +12,8 @@ node {
         sh "${mvnHome}/bin/mvn clean install"
         step([$class: 'JUnitResultArchiver', testResults:'**/target/surefire-reports/TEST-*.xml'])
     }
+
+    stage('Run Cucumber Part 1') {
+        sh "${mvnHome}/bin/mvn clean install -Dtest=com.example.demo.RunCucumberPart1Test -Dcucumber=true"
+    }
 }
