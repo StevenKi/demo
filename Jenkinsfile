@@ -14,6 +14,10 @@ node {
     }
 
     stage('Run Cucumber Part 1') {
-        sh "${mvnHome}/bin/mvn clean install -Dtest=com.example.demo.RunCucumberPart1Test -Dcucumber=true"
+        sh "${mvnHome}/bin/mvn install -Dtest=com.example.demo.RunCucumberPart1Test -Dcucumber=true"
+    }
+
+    stage('Run Cucumber Part 2') {
+        sh "${mvnHome}/bin/mvn install -Dtest=com.example.demo.RunCucumberPart2Test -Dcucumber=true"
     }
 }
